@@ -15,6 +15,11 @@ ES6、ES7、ES8等等出新來瀏覽器跟不上，所以在寫code的時候，�
 3. `babel-loader`: 大功能，將常見的LESS, SASS, CoffeeScript, CSS等等的轉譯(transpiler)成.js檔案以方面文件引入，或插入DOM之類的，anything to JS。
 
 4. `babel-ployfill`，補丁、補牆上的洞的概念，在執行環境中複製尚未存在的原生代碼。
+
+    [參考這篇](http://www.ruanyifeng.com/blog/2016/01/babel.html)
+    >Babel默认只转换新的JavaScript句法（syntax），而不转换新的API，比如Iterator、Generator、Set、Maps、Proxy、Reflect、Symbol、Promise等全局对  象，以及一些定义在全局对象上的方法（比如Object.assign）都不会转码。
+举例来说，ES6在Array对象上新增了Array.from方法。Babel就不会转码这个方法。如果想让这个方法运行，必须使用babel-polyfill，为当前环境提供一个垫片。
+    
     ```shell
     $ npm install --save babel-polyfill
     ```
