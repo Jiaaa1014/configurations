@@ -24,9 +24,7 @@ ES6、ES7、ES8等等出新來瀏覽器跟不上，所以在寫code的時候，�
  
 5. `babel-runtime`，當作分散版、局部版的`babel-polyfill`
 
-    總之呢這個滿重要的，除了在`.babelrc`和`webpack.config.js`設定常用到的plugin`babel-plugin-transform-runtime`需要它。 
-    概念如同
-    
+    總之呢這個滿重要的，除了在`.babelrc`和`webpack.config.js`設定常用到的plugin`babel-plugin-transform-runtime`需要它。
 
     ```shell
     $ npm install babel-plugin-transform-runtime --save-dev
@@ -202,3 +200,6 @@ ES6、ES7、ES8等等出新來瀏覽器跟不上，所以在寫code的時候，�
     ```
  
 ## .babelrc
+[other's gist](https://gist.github.com/rmoorman/94eeed830942758e218d92f15ce58d88)
+[someone's gist](https://gist.github.com/eddyerburgh/b569d23402611d14b40a2e4a1d534292)
+[reactjs/redux](https://github.com/reactjs/redux/blob/master/.babelrc)
