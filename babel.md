@@ -24,8 +24,8 @@ ES6、ES7、ES8等等出新來瀏覽器跟不上，所以在寫code的時候，�
  
 5. `babel-runtime`，當作分散版、局部版的`babel-polyfill`
 
-    總之呢這個滿重要的，除了在`.babelrc`，在`webpack.config.js`也常用到的plugin`babel-plugin-transform-runtime`需要它。 
-    
+    總之呢這個滿重要的，除了在`.babelrc`和`webpack.config.js`設定常用到的plugin`babel-plugin-transform-runtime`需要它。 
+    概念如同
     
 
     ```shell
@@ -62,7 +62,7 @@ ES6、ES7、ES8等等出新來瀏覽器跟不上，所以在寫code的時候，�
     ```
     倒不如`npm install babel-preset-es2015`，一組直接打包就好
     
-    b. `babel-preset-2016`，也就是`es7`，一個plugin，2 ** 4 = 16，大概是醬。
+    b. `babel-preset-2016`，也就是`es7`，一個plugin，指數不需要`Math.pow`直接用`**`代替
     ```shell
     npm install --save-dev babel-plugin-transform-exponentiation-operator
     ```
@@ -82,7 +82,15 @@ ES6、ES7、ES8等等出新來瀏覽器跟不上，所以在寫code的時候，�
     
     e. `babel-preset-react`
     
-      * `preset-flow`：規定type
+      * `preset-flow`：規定資料型態，包含plugin`transform-flow-strip-types`
+      ```shell
+      $ npm install --save-dev babel-preset-flow
+      ```
+      ```js
+      {
+         "presets": ["flow"]
+      }
+      ```
       * `syntax-jsx`：parsingJSX用的，詳細的工作內容下面的負責
       * `transform-react-jsx`
       * `transform-react-display-name`
@@ -90,15 +98,16 @@ ES6、ES7、ES8等等出新來瀏覽器跟不上，所以在寫code的時候，�
     f. `babel-preset-stage-x` as x = 0, 1, 2, 3
     數字越小越新，反正這些stage都比lastest新，但都還沒被標準化
 
-    * stage-4不存在，給個概念，包括es2015-2017
-    * stage-3包括4，以及兩個plugins：
+    * stage-4不存在，這裡提及給個概念而已，包括es2015-2017
+    * stage-3包括stage-4，以及兩個plugins：
 
-    - `transform-object-rest-spread`destructing還有點點點spread
+    - `transform-object-rest-spread`like destructing and spread
     - `transform-async-generator-functions`
 
-    * stage-0還有一個好玩的，拿JSX當例子
+    * stage-0好玩的，拿JSX當例子
 
     - `transform-do-expressions`，do loop by expression
+    
     ```js
     const getColoredComponent = color => {
       if(color === 'blue') { return <BlueComponent/>; }
@@ -133,7 +142,7 @@ ES6、ES7、ES8等等出新來瀏覽器跟不上，所以在寫code的時候，�
     // is equivalent to:
     func.bind(obj)
     ```
-7. `babel-preset-env`視情況拿東西，這樣壓力比較小，推推
+7. **`babel-preset-env`視需求拿需要的，這樣壓力比較小，推推**
     ```shell
     npm install babel-preset-env --save-dev
     ```
@@ -154,7 +163,7 @@ ES6、ES7、ES8等等出新來瀏覽器跟不上，所以在寫code的時候，�
     }
     ```
 
-8. `babel-loader`，配合webpack的        
+8. 第3點提過，`babel-loader`，配合webpack的        
     ```shell
     $ npm install babel-loader babel-core babel-preset-es2015 babel-plugin-transform-runtime webpack --save-dev       
     ```
