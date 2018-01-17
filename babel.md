@@ -133,8 +133,28 @@ ES6、ES7、ES8等等出新來瀏覽器跟不上，所以在寫code的時候，�
     // is equivalent to:
     func.bind(obj)
     ```
-        
-7. `babel-loader`，配合webpack的        
+7. `babel-preset-env`視情況拿東西，這樣壓力比較小，推推
+    ```shell
+    npm install babel-preset-env --save-dev
+    ```
+    ```js
+    {
+      "presets": [
+          [
+            "env",
+            {
+              "targets": {
+                "browsers": ["last 2 versions", "ie >= 7"],
+                "chrome": 56
+              }
+            }
+          ]
+        ]
+      }
+    }
+    ```
+
+8. `babel-loader`，配合webpack的        
     ```shell
     $ npm install babel-loader babel-core babel-preset-es2015 babel-plugin-transform-runtime webpack --save-dev       
     ```
