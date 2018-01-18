@@ -5,7 +5,7 @@
 $ yarn add webpack --dev
 ```
 
-most simple version：
+## most simple version：
 ```js
 const path = require('path')
 
@@ -18,23 +18,21 @@ module.exports = {
   },
 }
 ```
-and ur project diretory has `wevpackconDir/build.js`了
+and current project diretory has `wevpackconDir/build.js`
 
-Add `watch` in `modules.export`, same level as `output`
+## Add `watch` in `modules.export`, same level as `output`. As we change or modify the file, it automatically runs `webpack`
 ```js
 watch: true
 ```
-Traditionally, we add `<link>` at the `index.html` to styling, if try wrapping .css by webpack?
+## We used to add `<link>` at the `index.html` to styling, if wanna try wrapping .css files by webpack?
 
-Config hasn't get the clear mission yet, and get the warning `You may need an appropriate loader to handle this file type`
+Because config hasn't get the clear mission yet, that warn `You may need an appropriate loader to handle this file type`
 
-So first downlaod package using `yarn` cause `npm` sucks...
+#### step1. So first downlaod package using `yarn` 'cause `npm` sucks...
 ```shell
 $ yarn add css-laoder style-loader -D
 ```
-
-then
-
+#### step2a. Then configure the webpack.config.js
 ```js
 module: {
   rules: [{
@@ -45,9 +43,22 @@ module: {
     }
   }]
 }
-
 ```
-if the `index.js` adding some content
+#### step2b. Another way to set `loader`
+**It's no longer allowed to omit the '-loader' suffix when using loaders.**
+
+```js
+    use: {
+      loader: 'style-loader',
+      loader: 'css-loader'
+    }
+```
+can replace by
+```js
+loader: 'style-loader!css-loader'
+```
+
+## If we add some content to `index.js`
 ```js
 ReactDOM.render(<h1>index.js</h1>, document.getElementById('root'))
 ```
@@ -65,3 +76,4 @@ and add these config in the `rules`
 }
 ```
 and I found that `.babelrc` doesnt matter.
+
