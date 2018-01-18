@@ -1,6 +1,4 @@
 
-# Wrapppp tool
-
 ```shell
 $ yarn add webpack --dev
 ```
@@ -20,7 +18,8 @@ module.exports = {
 ```
 and current project diretory has `wevpackconDir/build.js`
 
-## Add `watch` in `modules.export`, same level as `output`. As we change or modify the file, it automatically runs `webpack`
+## Add `watch` in `modules.export`, same level as `output`. 
+As we change or modify the file, it automatically runs `webpack`
 ```js
 watch: true
 ```
@@ -76,4 +75,43 @@ and add these config in the `rules`
 }
 ```
 and I found that `.babelrc` doesnt matter.
+
+
+## Completed!!!
+```js
+const path = require('path')
+
+module.exports = {
+  entry: "./src/index.js",
+
+  output: {
+    path: path.resolve(__dirname + '/webpackconDir'),
+    // path: __dirname + '/webpackconDire',
+    filename: "build.js"
+  },
+
+  watch: true,
+  module: {
+    rules: [{
+      test: /\.css$/,
+      loader: 'style-loader!css-loader'
+      // loader: '!style!css' cannot omit '-loader'
+      // use: {
+      //   loader: 'style-loader',
+      //   loader: 'css-loader'
+      // }
+    },
+    {
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: 'babel-loader',
+      query: {
+        presets: ['react']
+      }
+    }
+
+    ]
+  }
+}
+```
 
