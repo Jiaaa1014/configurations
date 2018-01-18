@@ -1,7 +1,7 @@
 
 # Wrapppp tool
 
-`shell
+```shell
 $ yarn add webpack --dev
 ```
 
@@ -47,4 +47,21 @@ module: {
 }
 
 ```
-
+if the `index.js` adding some content
+```js
+ReactDOM.render(<h1>index.js</h1>, document.getElementById('root'))
+```
+we have to 
+```shell
+$ yarn add babel-loader babel-preset-react -D
+```
+and add these config in the `rules`
+```js
+{
+  test: /\.js$/,
+  exclude: /node_modules/,
+  loader: 'babel-loader',
+  query: { presets: ['react'] }
+}
+```
+and I found that `.babelrc` doesnt matter.
