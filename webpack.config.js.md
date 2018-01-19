@@ -3,7 +3,7 @@
 $ yarn add webpack --dev
 ```
 
-## most simple version：
+## Simplest version：
 ```js
 const path = require('path')
 
@@ -114,4 +114,12 @@ module.exports = {
   }
 }
 ```
-
+## Instances
+```js
+{ test: /\.css$/, loader: "style-loader!css-loader" },
+{ test: /\.(ttf|eot|svg|woff(2)?)(\?v=[0-9]\.[0-9]\.[0-9]|\?[a-z0-9]+)?$/, loader: 'url-loader' },
+{ test: /\.jpg$/, loader: "url-loader?mimetype=image/jpg" },
+{ test: /\.bmp$/, loader: "url-loader?mimetype=image/bmp" },
+{ test: /\.png$/, loader: "url-loader?mimetype=image/png" },
+{ test: /\.scss$/, loaders: ["style", "css", "sass"] },
+```      
