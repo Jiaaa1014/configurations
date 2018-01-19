@@ -124,3 +124,6 @@ module.exports = {
 { test: /\.png$/, loader: "url-loader?mimetype=image/png" },
 { test: /\.scss$/, loaders: ["style", "css", "sass"] },
 ```      
+
+## References
+[設定 babel-loader 來編譯 ES6, ES7, ES8, ES-Next 的程式碼！ ](https://ithelp.ithome.com.tw/articles/10194549)
