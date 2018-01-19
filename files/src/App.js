@@ -1,10 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom'
+import React from 'react'
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <div className="App">WOW</div>
-    )
-  }
+function App() {
+  return <div className="App">WOWoww</div>
 }
+
+export default App

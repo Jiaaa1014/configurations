@@ -1,8 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './App.css'
+import App from './App'
 
 import './console'
 
-ReactDOM.render(<h1>index.js</h1>, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById('root'))
 
