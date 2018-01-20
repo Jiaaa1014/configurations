@@ -1,7 +1,7 @@
 import React from 'react'
 
-// function App() {
-//   return <div className="App">WOWoww</div>
-// }
+export function B() {
+  console.log('this is from App.js B()')
+}
 const App = () => <div>wow</div>
 export default App
