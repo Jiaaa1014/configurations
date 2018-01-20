@@ -58,7 +58,7 @@ can replace by
 loader: 'style-loader!css-loader'
 ```
 
-## If we add some content to `index.js`
+## If add some content to `index.js` and create a `IIFE.jsx` file
 ```js
 ReactDOM.render(<h1>index.js</h1>, document.getElementById('root'))
 ```
@@ -68,27 +68,35 @@ $ yarn add babel-loader babel-preset-react -D
 ```
 and add these config in the `rules`
 ```js
-{
-  test: /\.js$/,
-  exclude: /node_modules/,
-  loader: 'babel-loader',
-  query: { presets: ['react'] }
-}
+  module: {
+    rules: [{
+      test: /\.css$/,
+      loader: 'style-loader!css-loader'
+    }, {
+      test: /\.jsx?$/,
+      exclude: /node_modules/,
+      loader: 'babel-loader',
+      query: {
+        presets: ['react']
+      }
+    }
+    ]
+  },
+  resolve: {
+    extensions: ['.js', '.jsx']
+  }
 ```
-and I found that `.babelrc` doesnt matter.
-
 
 ## Completed!!!
 ```js
 const path = require('path')
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: './src/index.js',
 
   output: {
-    path: path.resolve(__dirname + '/webpackconDir'),
-    // path: __dirname + '/webpackconDire',
-    filename: "build.js"
+    path: path.resolve(`${__dirname}/webpackconDir`),
+    filename: 'build.js'
   },
 
   watch: true,
@@ -96,24 +104,21 @@ module.exports = {
     rules: [{
       test: /\.css$/,
       loader: 'style-loader!css-loader'
-      // loader: '!style!css' cannot omit '-loader'
-      // use: {
-      //   loader: 'style-loader',
-      //   loader: 'css-loader'
-      // }
-    },
-    {
-      test: /\.js$/,
+    }, {
+      test: /\.jsx?$/,
       exclude: /node_modules/,
       loader: 'babel-loader',
       query: {
         presets: ['react']
       }
     }
-
     ]
+  },
+  resolve: {
+    extensions: ['.js', '.jsx']
   }
 }
+
 ```
 ## Instances
 ```js

@@ -946,8 +946,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__App_css__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__App_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__App_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__App__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__console__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__console___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__console__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__IIFE__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__IIFE___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__IIFE__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__console__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__console___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__console__);
 
 
 
@@ -955,7 +957,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__App__["a" /* default */], null), document.getElementById('root'));
+Object(__WEBPACK_IMPORTED_MODULE_3__App__["a" /* B */])();
+__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__App__["b" /* default */], null), document.getElementById('root'));
 
 /***/ }),
 /* 15 */
@@ -18864,22 +18867,29 @@ module.exports = function (css) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = B;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 
 
-function App() {
-  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-    "div",
-    { className: "App" },
-    "WOWoww"
-  );
+function B() {
+  console.log('this is from App.js B()');
 }
-
-/* harmony default export */ __webpack_exports__["a"] = (App);
+const App = () => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+  'div',
+  null,
+  'wow'
+);
+/* harmony default export */ __webpack_exports__["b"] = (App);
 
 /***/ }),
 /* 33 */
+/***/ (function(module, exports) {
+
+(() => console.log('Here"s IIFE consolelog'))();
+
+/***/ }),
+/* 34 */
 /***/ (function(module, exports) {
 
 console.log('hello world');
