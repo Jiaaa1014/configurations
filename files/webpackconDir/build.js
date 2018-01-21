@@ -958,6 +958,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 Object(__WEBPACK_IMPORTED_MODULE_3__App__["a" /* B */])();
+console.log('After Call B() function from ./IIFE');
 __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__App__["b" /* default */], null), document.getElementById('root'));
 
 /***/ }),

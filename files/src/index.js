@@ -6,5 +6,6 @@ import './IIFE'
 import './console'
 
 B()
+console.log('After Call B() function from ./IIFE')
 ReactDOM.render(<App />, document.getElementById('root'))
 
