@@ -40,7 +40,7 @@ just using `_` to name child .scss and then add `@import './btn';` to father.
   loader: 'style-loader!css-loader!sass-loader'
 }
 ```
-It works fine if without `sass-loader` previously installed that you follow someone's way to do so.
+It works fine without `sass-loader` previously installed that you follow someone's way to do so.
 
 
 # References
