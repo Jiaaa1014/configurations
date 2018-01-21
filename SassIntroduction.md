@@ -4,7 +4,7 @@
 ```shell
 $ npm i -g node-sass
 ```
-Using the as cli, `-w` means that automatically compiling as modifying or save the .scss files.
+Using the as cli, `-w` means that automatically compiling as modified or saved the .scss files.
 ```shell
 $ node-sass -w /styling/SignUp.scss  /styling/SignUp.css
 # this input means 'C:\styling\SignUp.scss', of course it doesnt work.
@@ -27,3 +27,4 @@ Although I remove the `sass-loader` config at `webpack.config.js`, it doesnt tri
 # References
 [sass-loader performance](https://github.com/webpack-contrib/sass-loader/issues/296)
 [How to compile or convert sass / scss to css with node-sass (no Ruby)?](https://stackoverflow.com/questions/31448114/how-to-compile-or-convert-sass-scss-to-css-with-node-sass-no-ruby)
+[to al Onnnnee](https://stackoverflow.com/questions/13025865/sass-compass-compile-all-css-file-to-one)
