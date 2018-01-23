@@ -19,14 +19,15 @@ module.exports = {
 ```
 and current project diretory has `wevpackconDir/build.js`
 
-## Add `watch` in `modules.export`, same level as `output`. 
+## Add `watch` in `modules.export`(failed, found at 01/23/2018)
 As we change or modify the file, it automatically runs `webpack`
 ```js
 watch: true
 ```
+
 ## We used to add `<link>` at the `index.html` to styling, if wanna try wrapping .css files by webpack?
 
-Because config hasn't get the clear mission yet, that warn `You may need an appropriate loader to handle this file type`
+Because config hasn't get the clear mission yet, got warning `You may need an appropriate loader to handle this file type`
 
 #### step1. So first downlaod package using `yarn` 'cause `npm` sucks...
 ```shell
@@ -44,25 +45,17 @@ module: {
   }]
 }
 ```
-#### step2b. Another way to set `loader`
-**It's no longer allowed to omit the '-loader' suffix when using loaders.**
-
-```js
-    use: {
-      loader: 'style-loader',
-      loader: 'css-loader'
-    }
-```
-can replace by
+can be replaced by
 ```js
 loader: 'style-loader!css-loader'
 ```
+
+**It's no longer allowed to omit the '-loader' suffix when using loaders.**
 
 ## If add some content to `index.js` and create a `IIFE.jsx` file
 ```js
 ReactDOM.render(<h1>index.js</h1>, document.getElementById('root'))
 ```
-we have to 
 ```shell
 $ yarn add babel-loader babel-preset-react -D
 ```
